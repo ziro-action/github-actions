@@ -1,5 +1,5 @@
 name: push-workflow
-on: push
+1on: push
 
 jobs:
   push-job:
