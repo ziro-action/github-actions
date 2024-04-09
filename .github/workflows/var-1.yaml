@@ -34,6 +34,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: create env
-      runs: echo "level=job" >> $GITHUB_ENV
+      run: echo "level=job" >> $GITHUB_ENV
     - name: check env
       run: echo "LEVEL $ {{ env.level }}"
