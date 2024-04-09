@@ -1,0 +1,32 @@
+name: cache
+on:
+  push:
+    paths:
+    - 'my-app/**' # 별표 2개 사용하면 my-app 디렉토리 모든 파일 포함
+
+jobs:
+  cache:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4
+    - name: setup-node 
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18 # 18 version node install
+    - name: Cache Node.js modules
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm # 캐싱할 경로
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }} # 의존성 별로 캐싱할 값
+        restore-keys: | # 캐시 복구를 위한 키, 정확히 일치하는 키가 없을 경우 가장 가까운 키를 가져옴
+          ${{ runner.os }}-node-
+    - name: Install depedencies
+      run: |
+        cd my-app
+        npm ci
+    - name: npm build
+      run: |
+        cd my-app
+        npm run build
+  
