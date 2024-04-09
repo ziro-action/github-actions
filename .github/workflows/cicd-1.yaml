@@ -71,7 +71,7 @@ jobs:
       id: credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        aws-region: ${{ vars.AWS_REGION }}
+        aws-region: ${{ vars.AWS_REGION_JP }}
         role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
     - name: setup kubectl
       uses: azure/setup-kubectl@v3
