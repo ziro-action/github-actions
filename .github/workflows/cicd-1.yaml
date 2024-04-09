@@ -98,10 +98,12 @@ jobs:
           {
             "text": "message",
             "blocks": [
-              "type": "section",
-              "text": {
-                "type": "mrkdwn",
-                "text": "Environment : dev, Deploy Result : ${{ steps.status.outcome }}, Repository : ${{ github.repository }}."
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "Environment : dev, Deploy Result : ${{ steps.status.outcome }}, Repository : ${{ github.repository }}."
+                }
               }
             ]
           }
