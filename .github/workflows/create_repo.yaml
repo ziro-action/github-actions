@@ -29,9 +29,9 @@ jobs:
         gh repo create ziro-action/${{ inputs.prefix }}-${{ inputs.name }} --public --add-readme
     - name: slack
       if: always()
-      uses: slackapi/slack-github-action@v1.24.0
+      uses: slackapi/slack-github-action@v1.25.0
       with:
-        payloads: |
+        payload: |
           {
             "attachments": [
               {
