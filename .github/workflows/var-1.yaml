@@ -30,7 +30,7 @@ jobs:
       env:
         level: step
   
-  get-env-3:
+  get-env:
     runs-on: ubuntu-latest
     steps:
     - name: create env
