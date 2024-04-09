@@ -11,4 +11,4 @@ jobs:
         echo "test=hello" >> $GITHUB_OUTPUT
     - name: check output
       run: |
-        echo ${{ steps.check-output.output.text }}
+        echo ${{ steps.check-output.outputs.text }}
