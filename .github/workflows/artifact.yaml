@@ -15,7 +15,7 @@ jobs:
   
   download-artifact:
     runs-on: ubuntu-latest
-    needs: [upload-artifacat]
+    needs: [upload-arfifact]
     steps:
     - name: download artifact
       uses: actions/download-artifact@v3
