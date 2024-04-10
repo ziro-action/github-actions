@@ -223,7 +223,7 @@ jobs:
         gh pr create --base master --head release/${{ github.ref_name }} --title "release/${{ github.ref_name }} -> master" --body "release pr"
 
   approve:
-    if: need.set-environment.outputs.environment == 'staging'
+    if: needs.set-environment.outputs.environment == 'staging'
     runs-on: ubuntu-latest
     environment: approve-process
     needs: [set-environment, deploy]
