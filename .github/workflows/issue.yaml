@@ -1,8 +1,7 @@
-name: pull-request-workflow
-on: pull_request
-# on:
-#   pull_request:
-#     types: [opened]
+name: issue-workflow
+on:
+  issues:
+    type: [opened]
 
 jobs:
   pull-request-job:
